@@ -1,3 +1,6 @@
+CORRESPONDING DATABASE IS LOCATED IN
+../Desktop/Homework/Databases/Fringeshows - ENSURE THE QUERIES ARE ONLY PERFORMED IN THIS DIRECTORY**
+
 Revision of concepts that we've learnt in SQL today
 
 Select the names of all users.
@@ -144,15 +147,39 @@ SELECT name,price from shows WHERE price=(select max(price) from shows);
 
 Select the name and price of the second from cheapest show.
 
+
+
+
 Select the names of all users whose names start with the letter "N".
+SELECT name from users where name LIKE 'N%';
+     name      
+---------------
+ Nick Ridell
+ Nicholas Hill
+(2 rows)
+
+
 
 Select the names of users whose names contain "mi".
+select name from users where name like '%mi%';
+      name       
+-----------------
+ Gary Carmichael
+(1 row)
+
+***Why does it not bring up Michael??**
+
 
 Section 3
 
 The following questions can be answered by using nested SQL statements but ideally you should learn about JOIN clauses to answer them.
 
 Select the time for the Edinburgh Royal Tattoo.
+
+**INCORRECT - CLOSEST ANSWER I GOT!
+SELECT time from times INNER JOIN shows on shows.name = shows.name;
+
+
 
 Select the number of users who want to see "Shitfaced Shakespeare".
 
